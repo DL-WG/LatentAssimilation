@@ -1,0 +1,13 @@
+LATENT SPACE 7
+python3 Experiments.py Structured/LS7/ExpLayers.py ../DataSet/Structured 7 Structured/LS7
+python3 Experiments.py Structured/LS7/ExpConv2DT.py ../DataSet/Structured 7 Structured/LS7
+python3 Experiments.py Structured/LS7/ExpKernel.py ../DataSet/Structured 7 Structured/LS7
+
+python3 GridSearchAE.py Structured/LS7/GridSearch.py ../DataSet/Structured 7 Structured/LS7
+python3 GridSearchAE.py Structured/LS7/GridSearch.py ../DataSet/RGB 7 RGB/LS7
+
+python3 AutoEncoder.py 7 ./Structured/LS7/GridSearch.py ../DataSet/Structured/train ./Structured/LS7/ 64 relu 32 400
+python3 AutoEncoder.py 7 ./Structured/LS7/GridSearch.py ../DataSet/RGB/train ./RGB/LS7/ 64 relu 16 400
+
+INCREASING LATENT SPACE
+python3 AutoEncoder.py 1000 ./Structured/LS7/GridSearch.py ../DataSet/Structured/train ./Structured/LS1000/ 64 relu 32 400 

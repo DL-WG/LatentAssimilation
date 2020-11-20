@@ -1,0 +1,5 @@
+python3 NormalizePPM.py ../DataSet/Structured/data Structured/
+python3 train_test_split.py Structured/
+
+python3 NormalizeRGBpy ../DataSet/RGB/data RGB/
+python3 train_test_split.py RGB/

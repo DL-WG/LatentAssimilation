@@ -1,0 +1,14 @@
+python3 train_val.py ../DataSet/Structured/train ../AutoEncoder/Structured/LS7/model-64-relu-32-400.h5 7 ./Structured/LS7/
+python3 train_val.py ../DataSet/RGB/train ../AutoEncoder/RGB/LS7/model-64-relu-16-400.h5 7 ./RGB/LS7/
+
+python3 LSTM_Layers.py Structured/LS7/ 7 Structured/LS7/
+
+python3 LSTM_GS.py Structured/LS7/ 7 Structured/LS7/
+python3 LSTM_GS.py RGB/LS7/ 7 RGB/LS7/
+
+python3 fit_lstm.py Structured/LS7/ 7 3 elu 30 400 16 Structured/LS7/
+python3 fit_lstm.py RGB/LS7/ 7 7 elu 50 400 16 RGB/LS7/
+
+INCREASING LATENT SPACE
+python3 train_val.py ../DataSet/Structured/train ../AutoEncoder/Structured/LS1000/model-64-relu-32-400-1000.h5 1000 ./Structured/LS1000/
+python3 fit_lstm.py Structured/LS1000/ 1000 3 elu 30 400 16 Structured/LS1000/

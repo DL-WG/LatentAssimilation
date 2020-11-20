@@ -1,0 +1,7 @@
+python3 ../DataSet/NormalizePPM.py Structured/sensor Structured/
+
+LATENT ASSIMILATION
+python3 LatentAssimilation.py 7 ../AutoEncoder/Structured/LS7/model-64-relu-32-400.h5 ../LSTM/Structured/LS7/model-3-elu-30-400-16.h5 ../DataSet/Structured/test Structured/scaled
+
+INCREASING LATENT SPACE
+python3 LatentAssimilation.py 1000 ../AutoEncoder/Structured/LS1000/model-64-relu-32-400-1000.h5 ../LSTM/Structured/LS1000/model-3-elu-30-400-16.h5 ../DataSet/Structured/test Structured/scaled
