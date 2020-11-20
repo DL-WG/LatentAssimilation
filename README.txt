@@ -23,13 +23,3 @@ DataAssimilation
 The data of the observations are stored at the path DataAssimilation/SensorsData/Observation.xlsx.
 The script LatentAssimilation.py performs the assimilation in the Latent Space and it prints the table of the results.
 
-Increasing the latent space
-To increase the latent space, you should train the autoencoder, the LSTM and, finally, you can use the Latent Assimilation model. 
-Assuming the latent space size equal to 1000, the commands are:
-1. AutoEncoder
-	python3 AutoEncoder.py 1000 ./Structured/LS7/GridSearch.py ../DataSet/Structured/train ./Structured/LS1000/ 64 relu 32 400 
-2. LSTM 
-	python3 train_val.py ../DataSet/Structured/train ../AutoEncoder/Structured/LS1000/model-64-relu-32-400-1000.h5 1000 ./Structured/LS1000/
-	python3 fit_lstm.py Structured/LS1000/ 1000 3 elu 30 400 16 Structured/LS1000/
-3. Latent Assimilation
-	python3 LatentAssimilation.py 1000 ../AutoEncoder/Structured/LS1000/model-64-relu-32-400-1000.h5 ../LSTM/Structured/LS1000/model-3-elu-30-400-16.h5 ../DataSet/Structured/test Structured/scaled
