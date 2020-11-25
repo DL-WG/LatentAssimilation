@@ -2,7 +2,8 @@ Each script takes parameters in input: read the file Command.txt to see the comm
 Each folder contains a Command.txt file in which there are the ordered instructions.
 
 DataSet
-The data created with Fluidity are serialized and stored in the file 'data' at the path DataSet/Structured/.
+You can find the DataSet folder at the link .
+The data created with Fluidity are serialized and stored in the file 'data' at the paths DataSet/Structured/ and DataSet/Structured/ for the Structured and RGB datasets respectively..
 At the same path are stored also the normalized data in the file 'scaled' and the train and test dataset.
 
 Autoencoder
