@@ -2,9 +2,13 @@ Each script takes parameters in input: read the file Command.txt to see the comm
 Each folder contains a Command.txt file in which there are the ordered instructions.
 
 ## DataSet
-You can find the DataSet folder at the link .
-The data created with Fluidity are serialized and stored in the file 'data' at the paths DataSet/Structured/ and DataSet/Structured/ for the Structured and RGB datasets respectively..
+You can find the DataSet folder at the link https://drive.google.com/drive/folders/1y3xJH6ZsLRlkzL7mQv7QHy-arDWGE2uO?usp=sharing.
+The data created with Fluidity are serialized and stored in the file 'data' at the paths DataSet/Structured/ and DataSet/Structured/ for the Structured and RGB datasets respectively.
 At the same path are stored also the normalized data in the file 'scaled' and the train and test dataset.
+
+## Data PreProcessing
+The DataSet folder contains both dataset only. 
+Assuming you want to work with the Structured dataset, you should normalize the data using the code in NormalizePPM.py and you should create the train and test sets trough the train_test_split.py code.
 
 ## Autoencoder
 All the configurations of the Autoencoder tested are stored at the path AutoEncoder/Structured/LS7/.
@@ -23,4 +27,3 @@ The final LSTM is trained through the script fit_lstm.py and it is stored at the
 ## DataAssimilation
 The data of the observations are stored at the path DataAssimilation/SensorsData/Observation.xlsx.
 The script LatentAssimilation.py performs the assimilation in the Latent Space and it prints the table of the results.
-
